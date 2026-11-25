@@ -1,3 +1,6 @@
-﻿Public Class Paard
+﻿Partial Public Module EindProject
+    Public Class Paard
 
-End Class
+    End Class
+End Module
+
