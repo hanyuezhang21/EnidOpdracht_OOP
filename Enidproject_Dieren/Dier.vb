@@ -50,8 +50,11 @@ Partial Public Module EindProject
         ' Overridable 表示这个方法可以在子类中被重写。
         ' Overridable betekent dat deze methode in
         ' een subklasse overschreven kan worden.
-        Public Overridable Sub ToonGedrag()
-            Console.WriteLine(strNaam & " toont zijn gedrag.")
+        Public Overridable Sub ToonDetails()
+            Console.WriteLine(strNaam & " " & intLeeftijd & " jaar oud \n" &
+                              "Habitat: " & strHabitat & "\n" &
+                              "Soort eten: " & strSoortEten & "\n" &
+                              "Gedrag: " & strGedragType)
         End Sub
 
     End Class

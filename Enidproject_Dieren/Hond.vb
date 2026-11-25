@@ -16,8 +16,11 @@
             Console.WriteLine("Woef!")
         End Sub
 
-        Public Overrides Sub ToonGedrag()
-            Console.WriteLine(strNaam & " is sociaal en speels.")
+        Public Overrides Sub ToonDetails()
+            Console.WriteLine(strNaam & " " & intLeeftijd & " jaar oud \n" &
+                              "Habitat: " & strHabitat & "\n" &
+                              "Soort eten: " & strSoortEten & "\n" &
+                              "Gedrag: " & strGedragType)
         End Sub
 
     End Class

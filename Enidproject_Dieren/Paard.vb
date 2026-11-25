@@ -44,8 +44,11 @@ Partial Public Module EindProject
             End If
         End Sub
 
-        Public Overridable Sub ToonGedrag()
-            Console.WriteLine(strNaam & " heeft het gedrag: " & strGedragType)
+        Public Overrides Sub ToonDetails()
+            Console.WriteLine(strNaam & " " & intLeeftijd & " jaar oud \n" &
+                              "Habitat: " & strHabitat & "\n" &
+                              "Soort eten: " & strSoortEten & "\n" &
+                              "Gedrag: " & strGedragType)
         End Sub
     End Class
 End Module
