@@ -1,15 +1,7 @@
 ﻿Public Class Kat
     Inherits Dier
-
-    Public Sub New(intLeeftijd As Integer,
-                   strHabitat As String,
-                   strSoortEten As String,
-                   strGedragType As String,
-                   strNaam As String)
-
-        MyBase.New(intLeeftijd, strHabitat, strSoortEten,
-                   strGedragType, strNaam)
-
+    Public Sub New(intLeeftijd As Integer, strHabitat As String, strSoortEten As String, strGedragType As String, strNaam As String)
+        MyBase.New(intLeeftijd, strHabitat, strSoortEten, strGedragType, strNaam)
     End Sub
 
     Public Sub Miauwen()
