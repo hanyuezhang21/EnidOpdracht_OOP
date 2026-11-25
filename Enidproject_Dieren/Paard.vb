@@ -14,20 +14,24 @@ Partial Public Module EindProject
 
         ' Constructor
         Public Sub New(intLeeftijd As Integer, strHabitat As String, strSoortEten As String,
-                       strGedragType As String, strNaam As String, strRas As String, dblSnelheid As Double,
+                       enumGedrag As Gedrag, strNaam As String, strRas As String, dblSnelheid As Double,
                        blnGetemd As Boolean)
 
-            MyBase.New(intLeeftijd, strHabitat, strSoortEten, strGedragType, strNaam)
+            MyBase.New(intLeeftijd, strHabitat, strSoortEten, enumGedrag, strNaam)
 
             Me.strRas = strRas
             Me.dblSnelheid = dblSnelheid
             Me.blnGetemd = blnGetemd
+
+            ' Random integer generator voor snelheids variatie tussen paarden.
+            ' Wordt een keer uitgevoerd bij het aanmaken van een Paard object.
             Me.intRngSnelheid = RandomNumberGenerator.GetInt32(0, 40)
         End Sub
 
-        Public Sub Hiniken()
+        ' Methodes
+        Public Sub Lopen()
             dblSnelheid = 20 + (intRngSnelheid * 0.2)
-            Console.WriteLine(strNaam & " hinnikt met een snelheid van " & dblSnelheid & " km/u.")
+            Console.WriteLine(strNaam & " loopt met een snelheid van " & dblSnelheid & " km/u.")
         End Sub
 
         Public Sub Galopperen()
@@ -44,11 +48,14 @@ Partial Public Module EindProject
             End If
         End Sub
 
+        ' overrides zodat de methode ToonDetails van de Dier klasse wordt overschreven
         Public Overrides Sub ToonDetails()
-            Console.WriteLine(strNaam & " " & intLeeftijd & " jaar oud \n" &
-                              "Habitat: " & strHabitat & "\n" &
-                              "Soort eten: " & strSoortEten & "\n" &
-                              "Gedrag: " & strGedragType)
+            Console.WriteLine("Paard: ")
+            MyBase.ToonDetails()
+
+            Console.WriteLine("Ras: " & strRas)
+            Console.WriteLine("Snelheid: " & dblSnelheid & " km/u")
+            Console.WriteLine("Getemd: " & If(blnGetemd, "Ja", "Nee"))
         End Sub
     End Class
 End Module

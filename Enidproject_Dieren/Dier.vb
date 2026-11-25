@@ -6,15 +6,29 @@ Partial Public Module EindProject
         Protected intLeeftijd As Integer
         Protected strHabitat As String
         Protected strSoortEten As String
-        Protected strGedragType As String
         Protected strNaam As String
+        Protected enumGedrag As Gedrag
+        ' enum zodat er geen schrijf fouten optreden
+        Public Enum Gedrag
+            Actief
+            Moe
+            Blij
+            Hongerig
+            Verdrietig
+            Protest
+            AandachtEisend
+            Dankbaar
+            Speels
+            Confortabel
+            Onconfortabel
+        End Enum
 
         ' Constructor
-        Public Sub New(intLeeftijd As Integer, strHabitat As String, strSoortEten As String, strGedragType As String, strNaam As String)
+        Public Sub New(intLeeftijd As Integer, strHabitat As String, strSoortEten As String, enumGedrag As Gedrag, strNaam As String)
             Me.intLeeftijd = intLeeftijd
             Me.strHabitat = strHabitat
             Me.strSoortEten = strSoortEten
-            Me.strGedragType = strGedragType
+            Me.enumGedrag = enumGedrag
             Me.strNaam = strNaam
 
         End Sub
@@ -22,7 +36,7 @@ Partial Public Module EindProject
         ' Methode Voeden: geeft het dier eten
         ' en verandert het gedragstype naar Actief.
         Public Sub Voeden()
-            strGedragType = "Actief"
+            enumGedrag = Gedrag.Actief
             Console.WriteLine(strNaam & " krijgt " & strSoortEten)
         End Sub
         'Methode
@@ -33,7 +47,7 @@ Partial Public Module EindProject
         Public Sub LatenSpelen()
 
             If KanSpelen() Then
-                strGedragType = "Moe"
+                enumGedrag = Gedrag.Moe
                 Console.WriteLine(strNaam & " speelt!")
             Else
                 Console.WriteLine(strNaam & " is te moe.")
@@ -45,16 +59,16 @@ Partial Public Module EindProject
         ' 如果状态不是 Moe，就返回 True；否则返回 False。
         ' Als het gedragstype niet Moe is, geeft de methode True terug. Anders False.
         Public Function KanSpelen() As Boolean
-            Return strGedragType <> "Moe"
+            Return enumGedrag <> Gedrag.Moe
         End Function
         ' Overridable 表示这个方法可以在子类中被重写。
         ' Overridable betekent dat deze methode in
         ' een subklasse overschreven kan worden.
         Public Overridable Sub ToonDetails()
-            Console.WriteLine(strNaam & " " & intLeeftijd & " jaar oud \n" &
-                              "Habitat: " & strHabitat & "\n" &
-                              "Soort eten: " & strSoortEten & "\n" &
-                              "Gedrag: " & strGedragType)
+            Console.WriteLine("Dier: " & strNaam & " (" & intLeeftijd & ")")
+            Console.WriteLine("Habitat: " & strHabitat)
+            Console.WriteLine("Soort eten: " & strSoortEten)
+            Console.WriteLine("Gedrag: " & enumGedrag.ToString())
         End Sub
 
     End Class

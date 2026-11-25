@@ -6,10 +6,10 @@
         Inherits Dier
 
         'Constructor:
-        Public Sub New(intLeeftijd As Integer, strHabitat As String, strSoortEten As String, strGedragType As String, strNaam As String)
+        Public Sub New(intLeeftijd As Integer, strHabitat As String, strSoortEten As String, enumGedrag As Gedrag, strNaam As String)
             ' MyBase.New 调用父类 Dier 的构造方法。
             ' MyBase.New roept de constructor van de basisklasse Dier op.
-            MyBase.New(intLeeftijd, strHabitat, strSoortEten, strGedragType, strNaam)
+            MyBase.New(intLeeftijd, strHabitat, strSoortEten, enumGedrag, strNaam)
         End Sub
 
         Public Sub Blaffen()
@@ -17,10 +17,8 @@
         End Sub
 
         Public Overrides Sub ToonDetails()
-            Console.WriteLine(strNaam & " " & intLeeftijd & " jaar oud \n" &
-                              "Habitat: " & strHabitat & "\n" &
-                              "Soort eten: " & strSoortEten & "\n" &
-                              "Gedrag: " & strGedragType)
+            Console.WriteLine("Hond: ")
+            MyBase.ToonDetails()
         End Sub
 
     End Class
