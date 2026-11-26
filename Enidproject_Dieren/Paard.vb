@@ -55,6 +55,7 @@ Partial Public Module EindProject
 
             Console.WriteLine("Ras: " & strRas)
             Console.WriteLine("Snelheid: " & dblSnelheid & " km/u")
+            ' Korte if statement om te controleren of het paard getemd is
             Console.WriteLine("Getemd: " & If(blnGetemd, "Ja", "Nee"))
         End Sub
     End Class
