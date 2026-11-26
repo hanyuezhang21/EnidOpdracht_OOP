@@ -53,7 +53,7 @@ Partial Public Module EindProject
         ' Overridable betekent dat deze methode in
         ' een subklasse overschreven kan worden.
         Public Overridable Sub ToonDetails()
-            Console.WriteLine("Dier: " & strNaam & " (" & intLeeftijd & ")")
+            Console.WriteLine(strNaam & " (" & intLeeftijd & ")")
             Console.WriteLine("Habitat: " & strHabitat)
             Console.WriteLine("Soort eten: " & strSoortEten)
             Console.WriteLine("Gedrag: " & enumGedrag.ToString())

@@ -19,6 +19,7 @@
         Public Overrides Sub ToonDetails()
             Console.WriteLine("Hond: ")
             MyBase.ToonDetails()
+            Console.WriteLine()
         End Sub
 
     End Class
