@@ -26,6 +26,7 @@
         Public Overrides Sub ToonDetails()
             Console.WriteLine("Kat: ")
             MyBase.ToonDetails()
+            Console.WriteLine()
         End Sub
 
     End Class
