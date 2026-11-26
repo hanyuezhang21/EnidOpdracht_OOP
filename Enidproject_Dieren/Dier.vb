@@ -8,20 +8,8 @@ Partial Public Module EindProject
         Protected strSoortEten As String
         Protected strNaam As String
         Protected enumGedrag As Gedrag
-        ' enum zodat er geen schrijf fouten optreden
-        Public Enum Gedrag
-            Actief
-            Moe
-            Blij
-            Hongerig
-            Verdrietig
-            Protest
-            AandachtEisend
-            Dankbaar
-            Speels
-            Confortabel
-            Onconfortabel
-        End Enum
+
+
 
         ' Constructor
         Public Sub New(intLeeftijd As Integer, strHabitat As String, strSoortEten As String, enumGedrag As Gedrag, strNaam As String)
